@@ -1,60 +1,62 @@
-import { MapPin } from "lucide-react";
+import { Droplet, MapPin, Thermometer, Wind } from "lucide-react";
 import Stat from "./Stat";
+import { getWeatherTheme } from "../utils/getTheme";
 
 const WeatherCard = ({ weather, place }) => {
-  const stat = [
-    { icon: "", label: "Feels Like", value: `${weather?.feelsLike}` },
-    { icon: "", label: "Humidity", value: `${weather?.humidity}` },
-    { icon: "", label: "Wind Speed", value: `${weather?.windSpeed}` },
+  const theme = getWeatherTheme(weather?.icon);
+
+  const stats = [
+    { icon: Thermometer, label: "Feels like", value: `${weather?.feelsLike}°C` },
+    { icon: Droplet, label: "Humidity", value: `${weather?.humidity}%` },
+    { icon: Wind, label: "Wind speed", value: `${weather?.windSpeed} km/h` },
   ];
 
   return (
-    <div className="space-y-3">
-      <h1 className="text-2xl text-blue-600 font-semibold">
-        Today's Weather Deatalis
-      </h1>
-      <div className="flex items-center gap-3">
-        <MapPin size={30} />
-        <h2 className="text-4xl text-purple-600 font-semibold">{place.name}</h2>
+    <section className="rounded-2xl shadow-2xl relative overflow-hidden p-8 max-[480px]:p-6">
+      {/* card-er kone weather-er rongey halka glow */}
+      <span
+        className="absolute -top-24 -right-20 w-64 h-64 rounded-full blur-3xl pointer-events-none"
+        style={{ background: theme.accent, opacity: 0.16 }}
+        aria-hidden="true"
+      />
+
+      <div className="relative">
+        <span className="inline-block rounded-full bg-sky-100 text-sky-700 text-xs font-bold px-3 py-1">
+          Today's weather
+        </span>
+
+        <h2 className="flex items-center gap-2 text-[28px] max-[480px]:text-[24px] font-bold mt-4 mb-0 m-0">
+          <MapPin size={21} strokeWidth={2.5} className="text-sky-500 flex-shrink-0" />
+          {place.name}
+        </h2>
+
+        <div className="flex items-end gap-5 mt-6 mb-7 max-[380px]:flex-col max-[380px]:items-start max-[380px]:gap-2">
+          <span
+            className="text-[100px] max-[480px]:text-[78px] font-extrabold leading-[0.82]"
+            style={{ color: theme.strong }}
+          >
+            {weather?.temperature}
+            <span className="text-[52px] max-[480px]:text-[40px] align-top">°</span>
+          </span>
+          <div className="pb-2">
+            {/* choto headline, jemon "Rain" */}
+            <span className="block text-[21px] font-bold">
+              {weather?.conditionLabel}
+            </span>
+            {/* weather code-er exact mane, jemon "Heavy rain" */}
+            <span className="block text-[14px] text-slate-500">
+              {weather?.description}
+            </span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-3 gap-3 max-[560px]:grid-cols-1">
+          {stats.map((s) => (
+            <Stat key={s.label} s={s} />
+          ))}
+        </div>
       </div>
-      <div className="flex items-center gap-16">
-        <h3 className="text-5xl text-purple-900 font-extrabold">
-          {weather?.temperature} C
-        </h3>
-        <p className="text-2xl text-purple-900 font-extrabold">
-          {weather?.description}
-        </p>
-      </div>
-      <div className="flex items-center justify-between gap-4">
-
-        
-
-        {
-        stat.map((s,index)=>(<Stat key={index} s={s}/>))
-        
-        }
-
-        {/* <div className="shadow-2xl rounded-2xl  p-5 text-center">
-          <h3 className="text-lg text-purple-900 font-bold">Feels LIke </h3>
-          <p className="text-2xl text-purple-900 font-extrabold">
-            {weather?.feelsLike}
-          </p>
-        </div> */}
-        {/* <div className="shadow-2xl rounded-2xl  p-5 text-center">
-          <h3 className="text-lg text-purple-900 font-bold">Wind Speed </h3>
-          <p className="text-2xl text-purple-900 font-extrabold">
-            {weather?.windSpeed}
-          </p>
-        </div> */}
-
-        {/* <div className="shadow-2xl rounded-2xl  p-5 text-center">
-          <h3 className="text-lg text-purple-900 font-bold">Humidity </h3>
-          <p className="text-2xl text-purple-900 font-extrabold">
-            {weather?.humidity}
-          </p>
-        </div> */}
-      </div>
-    </div>
+    </section>
   );
 };
 

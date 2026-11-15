@@ -1,211 +1,220 @@
-
-
 export const WMO_CODE = {
+  // 0-3: clear sky through to fully overcast
   0: {
     condition: "clear",
     description: "Clear sky",
-    label: "clear_sky",
-    icon: "clear_sky",
+    label: "Clear Sky",
+    icon: "clear",
   },
   1: {
-    condition: "clear",
+    condition: "partly_cloudy",
     description: "Mainly clear",
-    label: "mainly_clear",
-    icon: "mainly_clear",
+    label: "Partly Cloudy",
+    icon: "partly_cloudy",
   },
   2: {
-    condition: "cloudy",
+    condition: "partly_cloudy",
     description: "Partly cloudy",
-    label: "partly_cloudy",
+    label: "Partly Cloudy",
     icon: "partly_cloudy",
   },
   3: {
     condition: "cloudy",
     description: "Overcast",
-    label: "overcast",
-    icon: "overcast",
+    label: "Cloudy",
+    icon: "cloudy",
   },
-  45: {
-    condition: "fog",
-    description: "Fog",
-    label: "fog",
-    icon: "fog",
-  },
+
+  // 45-48: fog
+  45: { condition: "fog", description: "Fog", label: "Foggy", icon: "fog" },
   48: {
     condition: "fog",
     description: "Depositing rime fog",
-    label: "rime_fog",
+    label: "Foggy",
     icon: "fog",
   },
+
+  // 51-57: drizzle (light steady rain), and drizzle that freezes on contact
   51: {
     condition: "drizzle",
     description: "Light drizzle",
-    label: "light_drizzle",
-    icon: "drizzle",
+    label: "Drizzle",
+    icon: "rain",
   },
   53: {
     condition: "drizzle",
     description: "Moderate drizzle",
-    label: "moderate_drizzle",
-    icon: "drizzle",
+    label: "Drizzle",
+    icon: "rain",
   },
   55: {
     condition: "drizzle",
     description: "Dense drizzle",
-    label: "dense_drizzle",
-    icon: "drizzle",
+    label: "Drizzle",
+    icon: "rain",
   },
   56: {
     condition: "freezing_rain",
     description: "Light freezing drizzle",
-    label: "light_freezing_drizzle",
-    icon: "freezing_rain",
+    label: "Freezing Rain",
+    icon: "rain",
   },
   57: {
     condition: "freezing_rain",
     description: "Dense freezing drizzle",
-    label: "dense_freezing_drizzle",
-    icon: "freezing_rain",
+    label: "Freezing Rain",
+    icon: "rain",
   },
+
+  // 61-67: rain, and rain that freezes on contact
   61: {
     condition: "rain",
     description: "Slight rain",
-    label: "slight_rain",
+    label: "Rain",
     icon: "rain",
   },
   63: {
     condition: "rain",
     description: "Moderate rain",
-    label: "moderate_rain",
+    label: "Rain",
     icon: "rain",
   },
   65: {
     condition: "rain",
     description: "Heavy rain",
-    label: "heavy_rain",
-    icon: "heavy_rain",
+    label: "Rain",
+    icon: "rain",
   },
   66: {
     condition: "freezing_rain",
     description: "Light freezing rain",
-    label: "light_freezing_rain",
-    icon: "freezing_rain",
+    label: "Freezing Rain",
+    icon: "rain",
   },
   67: {
     condition: "freezing_rain",
     description: "Heavy freezing rain",
-    label: "heavy_freezing_rain",
-    icon: "freezing_rain",
+    label: "Freezing Rain",
+    icon: "rain",
   },
+
+  // 71-77: snow fall
   71: {
     condition: "snow",
-    description: "Slight snowfall",
-    label: "slight_snowfall",
+    description: "Slight snow fall",
+    label: "Snow",
     icon: "snow",
   },
   73: {
     condition: "snow",
-    description: "Moderate snowfall",
-    label: "moderate_snowfall",
+    description: "Moderate snow fall",
+    label: "Snow",
     icon: "snow",
   },
   75: {
     condition: "snow",
-    description: "Heavy snowfall",
-    label: "heavy_snowfall",
+    description: "Heavy snow fall",
+    label: "Snow",
     icon: "snow",
   },
   77: {
     condition: "snow",
     description: "Snow grains",
-    label: "snow_grains",
+    label: "Snow",
     icon: "snow",
   },
+
+  // 80-86: showers (short bursts of rain or snow)
   80: {
-    condition: "rain",
+    condition: "showers",
     description: "Slight rain showers",
-    label: "slight_rain_showers",
-    icon: "rain_showers",
+    label: "Rain Showers",
+    icon: "rain",
   },
   81: {
-    condition: "rain",
+    condition: "showers",
     description: "Moderate rain showers",
-    label: "moderate_rain_showers",
-    icon: "rain_showers",
+    label: "Rain Showers",
+    icon: "rain",
   },
   82: {
-    condition: "rain",
+    condition: "showers",
     description: "Violent rain showers",
-    label: "violent_rain_showers",
-    icon: "heavy_rain",
+    label: "Rain Showers",
+    icon: "rain",
   },
   85: {
     condition: "snow",
     description: "Slight snow showers",
-    label: "slight_snow_showers",
+    label: "Snow",
     icon: "snow",
   },
   86: {
     condition: "snow",
     description: "Heavy snow showers",
-    label: "heavy_snow_showers",
+    label: "Snow",
     icon: "snow",
   },
+
+  // 95-99: thunderstorms
   95: {
     condition: "thunderstorm",
     description: "Thunderstorm",
-    label: "thunderstorm",
-    icon: "thunderstorm",
+    label: "Thunderstorm",
+    icon: "storm",
   },
   96: {
     condition: "thunderstorm",
     description: "Thunderstorm with slight hail",
-    label: "thunderstorm_slight_hail",
-    icon: "thunderstorm",
+    label: "Thunderstorm",
+    icon: "storm",
   },
   97: {
     condition: "thunderstorm",
     description: "Heavy thunderstorm",
-    label: "heavy_thunderstorm",
-    icon: "thunderstorm",
+    label: "Thunderstorm",
+    icon: "storm",
   },
   99: {
     condition: "thunderstorm",
     description: "Thunderstorm with heavy hail",
-    label: "thunderstorm_heavy_hail",
-    icon: "thunderstorm",
+    label: "Thunderstorm",
+    icon: "storm",
   },
 };
 
-
-
 export const getWeather = async (place) => {
-  // console.log("function",place)
   const { lat, lon, name } = place;
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m&current=temperature_2m,relative_humidity_2m,precipitation,rain,weather_code,cloud_cover,apparent_temperature,is_day,wind_speed_10m`;
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,precipitation,weather_code,wind_speed_10m,rain,apparent_temperature,is_day`;
 
   const result = await fetch(url);
-  //   console.log(await result.json());
   const data = await result.json();
   const now = data.current;
-//   console.log(now.weather_code);
   if (!now) {
     throw new Error("weather not shown");
   }
- const weather = WMO_CODE[now.weather_code]
-//  console.log(weather)
- const icon = weather.icon ==="clear"&& now .is_day === 0?"clear_night": weather.icon  
+
+  // unknown code hole fallback
+  const weather = WMO_CODE[now.weather_code] || {
+    condition: "unknown",
+    description: "Unknown",
+    label: "Unknown",
+    icon: "cloudy",
+  };
+
+  // raate clear akash hole clear_night animation
+  const icon =
+    weather.icon === "clear" && now.is_day === 0 ? "clear_night" : weather.icon;
+
   return {
     location: name,
     temperature: Math.round(now.temperature_2m),
     humidity: now.relative_humidity_2m,
-    windSpeed: now.wind_speed_10m,
+    windSpeed: Math.round(now.wind_speed_10m),
     feelsLike: Math.round(now.apparent_temperature),
-    condition : weather.condition,
+    condition: weather.condition,
     description: weather.description,
-    conditionLabel : weather.label,
-    icon 
+    conditionLabel: weather.label,
+    icon,
   };
-
-  //
 };

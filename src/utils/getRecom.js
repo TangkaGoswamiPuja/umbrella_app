@@ -1,17 +1,74 @@
- const Rain = ["freezing_rain", "rain", "drizzle"];
+const Rain = ["rain", "drizzle", "freezing_rain", "showers", "thunderstorm"];
 
- export function getRecommandations (weather){
-    if (!weather) {
-      return;
-    }
-    if (weather.condition === "snow") {
-      return { type: "snow", label: "Snow ", text: "Drive safely" };
-    }
-    if (Rain.includes(weather.condition)) {
-      return { type: "rain", label: "Rain", text: "Take your umbrella" };
-    }
-if (weather.condition === "clear") {
-      return { type: "clear", label: "Clear", text: "GO outside happily" };
-    }
+export function getRecommandations(weather) {
+  if (!weather) return null;
 
+  // 1. Je weather-er jonno prostuti lagbe
+  if (weather.condition === "snow") {
+    return {
+      type: "snow",
+      label: "Snow Alert",
+      text: "It's snowing. Wear warm clothes and take it slow outside.",
+    };
+  }
+  if (Rain.includes(weather.condition)) {
+    return {
+      type: "rain",
+      label: "Rain Alert",
+      text: "It's raining. Don't forget to take an umbrella with you.",
+    };
+  }
+  if (weather.condition === "fog") {
+    return {
+      type: "fog",
+      label: "Fog Alert",
+      text: "It's foggy. Drive carefully and keep some distance from other vehicles.",
+    };
+  }
+
+  // 2. Temperature (°C) onujayi shotorkota
+  if (weather.temperature >= 32) {
+    return {
+      type: "hot",
+      label: "Hot Day",
+      text: "It's quite hot today. Take a water bottle with you.",
+    };
+  }
+  if (weather.temperature <= 15) {
+    return {
+      type: "cold",
+      label: "Cold Day",
+      text: "It's cold today. Wear warm clothes before heading out.",
+    };
+  }
+  if (weather.temperature >= 28) {
+    return {
+      type: "warm",
+      label: "Warm Day",
+      text: "It's warm today. Take some water with you.",
+    };
+  }
+
+  // 3. Temperature thik thakle akasher obostha
+  if (weather.condition === "clear") {
+    return {
+      type: "sunny",
+      label: "Sunny Day",
+      text: "Sunny skies ahead. Take water and consider carrying sunglasses.",
+    };
+  }
+  if (weather.condition === "partly_cloudy" || weather.condition === "cloudy") {
+    return {
+      type: "cloudy",
+      label: "Cloudy Day",
+      text: "Mostly cloudy today. A light jacket might come in handy.",
+    };
+  }
+
+  // 4. Special kichu nai
+  return {
+    type: "pleasant",
+    label: "Perfect Day",
+    text: "The weather looks comfortable today. Enjoy your day!",
   };
+}
