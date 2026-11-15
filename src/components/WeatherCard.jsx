@@ -26,7 +26,7 @@ const WeatherCard = ({ weather, place }) => {
         </span>
 
         <h2 className="flex items-center gap-2 text-[28px] max-[480px]:text-[24px] font-bold mt-4 mb-0 m-0">
-          <MapPin size={21} strokeWidth={2.5} className="text-sky-500 flex-shrink-0" />
+          <MapPin size={21} strokeWidth={2.5} className="text-sky-500 shrink-0" />
           {place.name}
         </h2>
 

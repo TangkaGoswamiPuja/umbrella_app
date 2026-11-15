@@ -18,14 +18,14 @@ const Recommendation = ({ recom }) => {
 
   return (
     <section
-      className="flex items-start gap-[18px] w-full rounded-2xl border-l-[5px] border-solid shadow-2xl p-7 max-[480px]:p-5 transition-transform duration-200 hover:-translate-y-1"
+      className="flex items-start gap-4.5 w-full rounded-2xl border-l-[5px] border-solid shadow-2xl p-7 max-[480px]:p-5 transition-transform duration-200 hover:-translate-y-1"
       style={{ borderLeftColor: style.color, background: `${style.color}1A` }}
     >
-      <span className="inline-flex items-center justify-center w-[64px] h-[64px] rounded-[20px] bg-white/90 ring-1 ring-white shadow-sm flex-shrink-0">
+      <span className="inline-flex items-center justify-center w-16 h-16 rounded-[20px] bg-white/90 ring-1 ring-white shadow-sm shrink-0">
         <WeatherLottie
           kind="advice"
           name={recom.type}
-          className="w-[46px] h-[46px]"
+          className="w-11.5 h-11.5"
         />
       </span>
       <div>

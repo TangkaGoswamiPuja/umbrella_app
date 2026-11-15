@@ -15,7 +15,7 @@ const FeelsLike = ({ weather, place }) => {
       style={{ background: theme.sky }}
     >
       <span
-        className="absolute left-1/2 top-[42%] w-[360px] h-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl pointer-events-none"
+        className="absolute left-1/2 top-[42%] w-90 h-90 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl pointer-events-none"
         style={{ background: theme.accent, opacity: 0.24 }}
         aria-hidden="true"
       />
@@ -29,14 +29,14 @@ const FeelsLike = ({ weather, place }) => {
           className="rounded-2xl px-3 py-1 self-start inline-flex items-center gap-2 text-sm font-semibold"
           style={{ background: theme.chip, color: theme.ink }}
         >
-          <span className="w-[7px] h-[7px] rounded-full bg-current animate-pulse" />
+          <span className="w-1.75 h-1.75 rounded-full bg-current animate-pulse" />
           Live in {place?.name}
         </span>
 
         <WeatherLottie
           kind="weather"
           name={weather?.icon}
-          className="my-1 w-[270px] h-[270px] max-[480px]:w-[190px] max-[480px]:h-[190px]"
+          className="my-1 w-67.5 h-67.5 max-[480px]:w-47.5 max-[480px]:h-47.5"
         />
 
         <h3
