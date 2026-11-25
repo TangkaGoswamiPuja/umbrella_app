@@ -7,7 +7,7 @@ const Loader = () => {
         <WeatherLottie
           kind="weather"
           name="cloudy"
-          className="w-[110px] h-[110px] mx-auto"
+          className="w-27.5 h-27.5 mx-auto"
         />
         <p className="text-[16px] font-semibold text-slate-500 mt-2 mb-0">
           Getting your weather...

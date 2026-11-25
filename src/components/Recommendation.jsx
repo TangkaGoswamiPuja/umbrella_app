@@ -18,8 +18,8 @@ const Recommendation = ({ recom }) => {
 
   return (
     <section
-      className="flex items-start gap-4.5 w-full rounded-2xl border-l-[5px] border-solid shadow-2xl p-7 max-[480px]:p-5 transition-transform duration-200 hover:-translate-y-1"
-      style={{ borderLeftColor: style.color, background: `${style.color}1A` }}
+      className="flex items-start gap-4.5 w-full rounded-2xl border-l-[5px] border border-solid shadow-2xl p-7 max-[480px]:p-5 transition-transform duration-200 hover:-translate-y-1"
+      style={{ borderLeftColor: style.color,borderColor: style.color, background: `${style.color}1A` }}
     >
       <span className="inline-flex items-center justify-center w-16 h-16 rounded-[20px] bg-white/90 ring-1 ring-white shadow-sm shrink-0">
         <WeatherLottie
