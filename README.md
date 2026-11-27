@@ -4,7 +4,7 @@
 
 A simple weather app that shows today's weather, a smart suggestion, and colors and animations that change with the weather.
 
-[Live Demo](https://umbrella-app-rho.vercel.app) · [Report a Bug](https://github.com/TangkaGoswamiPuja/umbrella_app/issues)
+[Live Demo] https://umbrella-app-rho.vercel.app · [Report a Bug](https://github.com/TangkaGoswamiPuja/umbrella_app/issues)
 
 </div>
 
